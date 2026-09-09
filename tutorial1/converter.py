@@ -177,8 +177,13 @@ class ConverterApp:
         else:  # HKD -> USD
             result = amount / rate
 
+        # 输入金额超过 100000 时, 结果改用科学计数法显示
+        if amount > 100000:
+            result_text = "{:.2e}".format(result)
+        else:
+            result_text = "{:.2f}".format(result)
         self.result_label.config(
-            text="{:.2f} {} = {:.2f} {}".format(amount, from_ccy, result, to_ccy))
+            text="{:.2f} {} = {} {}".format(amount, from_ccy, result_text, to_ccy))
 
 
 if __name__ == "__main__":

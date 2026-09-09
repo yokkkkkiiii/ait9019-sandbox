@@ -94,7 +94,9 @@ function convert() {
     result = amount / hkdPerUsd; // HKD -> USD
   }
 
-  resultValue.textContent = `${fmtMoney(result)} ${toCcy}`;
+  // 输入金额超过 100000 时, 结果改用科学计数法显示
+  const resultText = amount > 100000 ? result.toExponential(2) : fmtMoney(result);
+  resultValue.textContent = `${resultText} ${toCcy}`;
   resultBox.hidden = false;
   statusEl.textContent = "";
   statusEl.classList.remove("error");
