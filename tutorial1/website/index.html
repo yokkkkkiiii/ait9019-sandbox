@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HKD ⇄ USD Converter</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="card">
+    <span class="badge">Live Exchange Rate</span>
+    <h1>HKD ⇄ USD Converter</h1>
+
+    <label class="field-label" for="amount">Amount</label>
+    <input
+      id="amount"
+      class="amount-input"
+      type="number"
+      inputmode="decimal"
+      min="0"
+      step="any"
+      value="100"
+      placeholder="Enter amount"
+      autofocus
+    />
+
+    <div class="currency-row">
+      <div class="currency-box">
+        <span class="field-label">From</span>
+        <select id="from">
+          <option value="USD" selected>USD</option>
+          <option value="HKD">HKD</option>
+        </select>
+      </div>
+
+      <button class="swap-btn" id="swap" type="button" title="Swap currencies" aria-label="Swap currencies">⇄</button>
+
+      <div class="currency-box">
+        <span class="field-label">To</span>
+        <select id="to">
+          <option value="HKD" selected>HKD</option>
+          <option value="USD">USD</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="result-box" id="result-box" hidden>
+      <span class="result-label">Converted amount</span>
+      <div class="result-value" id="result-value">—</div>
+    </div>
+
+    <p class="rate-line" id="rate-line">Loading live rate…</p>
+    <p class="status" id="status"></p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

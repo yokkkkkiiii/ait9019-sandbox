@@ -1,0 +1,180 @@
+/* HKD ⇄ USD Converter —— 页面样式 */
+:root {
+  --navy: #0b2a5b;
+  --blue: #1d6fd1;
+  --teal: #0e8a7d;
+  --ink: #14263c;
+  --muted: #5b6b7f;
+  --line: #dce5f0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  font-family: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  background: linear-gradient(160deg, #0b1f43 0%, #15579c 55%, #0e8a7d 100%);
+}
+
+.card {
+  width: min(460px, 100%);
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 34px;
+  box-shadow: 0 30px 60px rgba(3, 18, 38, 0.35);
+}
+
+.badge {
+  display: inline-block;
+  background: #e7f1ff;
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 999px;
+  letter-spacing: 0.4px;
+}
+
+h1 {
+  margin: 12px 0 16px;
+  font-size: 24px;
+  color: var(--navy);
+}
+
+.field-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin: 14px 0 6px;
+}
+
+.amount-input {
+  width: 100%;
+  font-size: 26px;
+  font-weight: 600;
+  padding: 12px 14px;
+  border: 2px solid var(--line);
+  border-radius: 12px;
+  outline: none;
+  color: var(--navy);
+  transition: border-color 0.15s;
+}
+
+.amount-input:focus {
+  border-color: var(--blue);
+}
+
+.currency-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  margin-top: 2px;
+}
+
+.currency-box {
+  flex: 1;
+}
+
+select {
+  width: 100%;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--navy);
+  padding: 11px 10px;
+  border: 2px solid var(--line);
+  border-radius: 12px;
+  background: #ffffff;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+
+select:focus {
+  border-color: var(--blue);
+}
+
+.swap-btn {
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid var(--line);
+  background: #ffffff;
+  color: var(--blue);
+  font-size: 20px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.swap-btn:hover {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: #ffffff;
+}
+
+.result-box {
+  margin-top: 18px;
+  padding: 16px;
+  text-align: center;
+  background: #f0f7f5;
+  border: 1px solid #cfe8e2;
+  border-radius: 12px;
+}
+
+.result-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.result-value {
+  margin-top: 4px;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--navy);
+  word-break: break-word;
+}
+
+.rate-line {
+  margin: 16px 0 0;
+  font-size: 13px;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.5;
+  min-height: 1.2em;
+}
+
+.status {
+  margin: 8px 0 0;
+  font-size: 12px;
+  color: var(--muted);
+  text-align: center;
+  min-height: 1em;
+}
+
+.status.error {
+  color: #c0392b;
+}
+
+@media (max-width: 420px) {
+  .card {
+    padding: 24px;
+  }
+  select {
+    font-size: 13px;
+    padding: 9px 6px;
+  }
+}
