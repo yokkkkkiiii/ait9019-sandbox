@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "time": {
+      "type": "stdio",
+      "command": "D:/python3.11/Scripts/mcp-server-time.EXE",
+      "args": [],
+      "description": "官方时间服务器：查询任意时区的当前时间、做时区换算"
+    }
+  }
+}
